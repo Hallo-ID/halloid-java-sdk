@@ -24,7 +24,7 @@ public class TokenServiceTest {
     @Test
     void shouldReturnSignedJWT() throws NoSuchAlgorithmException, InvalidKeySpecException {
         String clientID = "TEST_CLIENT_ID";
-        String privateKey = this.getPrivateKey();
+        String privateKey = this.getEncodedPrivateKey();
 
         String token = this.tokenService.generateSignedJWT(clientID, privateKey);
 
@@ -34,7 +34,7 @@ public class TokenServiceTest {
     @Test
     void shouldReturnVerifiedJWT() throws NoSuchAlgorithmException, InvalidKeySpecException {
         String clientID = "TEST_CLIENT_ID";
-        String privateKey = this.getPrivateKey();
+        String privateKey = this.getEncodedPrivateKey();
 
         String token = this.tokenService.generateSignedJWT(clientID, privateKey);
 
@@ -42,10 +42,10 @@ public class TokenServiceTest {
     }
 
     private Boolean tokenVerified(String jwt) throws NoSuchAlgorithmException, InvalidKeySpecException {
-        return this.tokenService.verifyJWTSignature(this.getPublicKey(), jwt).getTokenVerified();
+        return this.tokenService.verifyJWTSignature(this.getEncodedPublicKey(), jwt).getTokenVerified();
     }
 
-    private String getPrivateKey() {
+    private String getEncodedPrivateKey() {
         return "MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCEBvU8aQd+hDBUu1veJIoE9lDUTSv5xBg9OMuN6Zg56NfeSz" +
                 "TBolfgi3BWQM+C0vPQ5bjIDnBMPr+3tY723uPabF04O/4eWi6Vfv+dJvMa8eavP/V7HhmjeYjU5maBE1aJr1n0KItsq0imhNv" +
                 "trk1pBUexfczG079suyGr8hjjq21S6ptdMqNZyB7PekMCSj7fsV0MY74t8GkR888jOsL3bqO54t3CjiMESk9M0sty1W8CUmML" +
@@ -65,7 +65,7 @@ public class TokenServiceTest {
                 "CrPXkPrf9fpDIRePnS2n7GdktE5/umtr4nGe0V5Y6qkJEsTmALxtkzIUFdz848bAXFDQQ==";
     }
 
-    private String getPublicKey() {
+    private String getEncodedPublicKey() {
         return "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhAb1PGkHfoQwVLtb3iSKBPZQ1E0r+cQYPTjLjemYOejX3ks0waJX4I" +
                 "twVkDPgtLz0OW4yA5wTD6/t7WO9t7j2mxdODv+HloulX7/nSbzGvHmrz/1ex4Zo3mI1OZmgRNWia9Z9CiLbKtIpoTb7a5NaQV" +
                 "HsX3MxtO/bLshq/IY46ttUuqbXTKjWcgez3pDAko+37FdDGO+LfBpEfPPIzrC926jueLdwo4jBEpPTNLLctVvAlJjCzmoPsvY" +
