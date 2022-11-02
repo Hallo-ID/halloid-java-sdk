@@ -1,0 +1,27 @@
+halloId:
+  client:
+    id: 1234-4567-8910
+    privateKey: |
+      -----BEGIN RSA PRIVATE KEY-----
+      MIICWgIBAAKBgH/+mvGEWlugUIvwrFbQCI6WEVeP+lI3dfEYEdyrorRBcdWbIHez
+      Kq7Bsv2tj4d0nV6JAu9RmF9A1YCiizvDk+YxhEQEh/IylekcsC2Pv/qADa1s8L/B
+      29OwI6MPLhSZp8Thuu0U73GYV0KQPEudpUBgW/x/vee0by8Rgyvjw97zAgMBAAEC
+      gYA8NpvPyPL1LesWmmeJA58y7PhFmC8r5HlwrWEhzgDiCfOyiKLyjPAkfG1nF/Jw
+      x/SMl6owydMD5K1MMauMtwppTsV7epjrJVkYrqSo4lSSCv8Szx6DfeWTKvYF1unj
+      GB+7/9UU0QwgX9P8AlswjGzDGBQpjAgYuoBA+pMmh/YiSQJBAOPRggSWAZs6QYD7
+      O3C3gPi7hbsrydsINBMVKfNOEw9Adf0CPa2bEybBOo8aPNDzXJIGonG/rA7G3aOP
+      fpDy8bUCQQCP0+cS0LQmKj3I0OPykKNQhrmdlNARevXBkJAicfp/05dE1PG/BYI5
+      HtR6u9HW+Mmm3ZRPKR0HGwQtPjC0yBcHAkAE2IX9dvtdw+V0yuM+yIhzwflcO9g1
+      Un1ZEpAr3rNFFcfss8mAEdZccqu+M36rqyGC8aUu6jbMsaoxOnIkvyYpAkBbrNiz
+      wH2jefdJwgQZf6HpWQaE7+6zxalRyMBmhDoEMi1QPV8dv/giSolq9b6qBIgcKU44
+      Kt+KwOinoeVPxd4PAkA60h7NfjpvQCy4izJQSAmcLgGQqPDDp653ZQOR65ytux96
+      8AVVP1LiWfHgQItCvdfamLl7EWYUsf4lRTHz5W2R
+      -----END RSA PRIVATE KEY-----
+
+  publicKey: |
+    -----BEGIN PUBLIC KEY-----
+    MIGeMA0GCSqGSIb3DQEBAQUAA4GMADCBiAKBgH/+mvGEWlugUIvwrFbQCI6WEVeP
+    +lI3dfEYEdyrorRBcdWbIHezKq7Bsv2tj4d0nV6JAu9RmF9A1YCiizvDk+YxhEQE
+    h/IylekcsC2Pv/qADa1s8L/B29OwI6MPLhSZp8Thuu0U73GYV0KQPEudpUBgW/x/
+    vee0by8Rgyvjw97zAgMBAAE=
+    -----END PUBLIC KEY-----

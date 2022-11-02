@@ -1,6 +1,7 @@
 package com.halloid.sdk.service;
 
 import com.halloid.sdk.model.AuthenticationResponse;
+import com.halloid.sdk.model.JWTBody;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
@@ -54,11 +55,20 @@ public class TokenService {
                 .setSigningKey(publicKey)
                 .build()
                 .parseClaimsJws(jwtString);
-
-        return new AuthenticationResponse(jwtString, true, true, jwt.getBody().get("username", String.class), 3600L);
+        JWTBody jwtBody = new JWTBody(jwt.getBody().get("clientID", String.class), jwt.getBody().get("sub", String.class), jwt.getBody().get("aud", String.class),
+                jwt.getBody().get("jti", String.class), jwt.getBody().get("iat", Integer.class), jwt.getBody().get("exp", Integer.class));
+        return new AuthenticationResponse(jwtString, true, true, jwt.getBody().get("username", String.class), 3600L, jwtBody);
 
     }
 
+    /**
+     * RSA PRIVATE KEY must be provided in PKCS #8 format. Do openssl pkcs8 -topk8 to convert a private key from
+     * traditional format to pkcs#8 format. The key also must be a valid BASE64 format.
+     * @param rsaPrivateKey
+     * @return
+     * @throws NoSuchAlgorithmException
+     * @throws InvalidKeySpecException
+     */
     private static PrivateKey getPrivateKey(String rsaPrivateKey) throws NoSuchAlgorithmException, InvalidKeySpecException {
         rsaPrivateKey = rsaPrivateKey.replace("-----BEGIN PRIVATE KEY-----", "");
         rsaPrivateKey = rsaPrivateKey.replace("-----END PRIVATE KEY-----", "");
