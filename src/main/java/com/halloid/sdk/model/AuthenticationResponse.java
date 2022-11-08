@@ -1,7 +1,7 @@
 package com.halloid.sdk.model;
 
 public class AuthenticationResponse {
-    private String authorizationToken;
+    private String authenticationToken;
     private Boolean tokenVerified;
     private Boolean userVerified;
     private String username;
@@ -9,8 +9,8 @@ public class AuthenticationResponse {
     private JWTBody jwtBody;
 
 
-    public AuthenticationResponse(String authorizationToken, Boolean tokenVerified, Boolean userVerified, String username, Long timeout, JWTBody jwtBody) {
-        this.authorizationToken = authorizationToken;
+    public AuthenticationResponse(String authenticationToken, Boolean tokenVerified, Boolean userVerified, String username, Long timeout, JWTBody jwtBody) {
+        this.authenticationToken = authenticationToken;
         this.tokenVerified = tokenVerified;
         this.userVerified = userVerified;
         this.username = username;
@@ -18,8 +18,8 @@ public class AuthenticationResponse {
         this.jwtBody = jwtBody;
     }
 
-    public String getAuthorizationToken() {
-        return authorizationToken;
+    public String getAuthenticationToken() {
+        return authenticationToken;
     }
 
     public Boolean getTokenVerified() {
