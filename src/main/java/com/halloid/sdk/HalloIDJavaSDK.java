@@ -24,6 +24,7 @@ public class HalloIDJavaSDK {
 
     public String generateServiceToken() {
 //        String privateKeyBase64 = Base64.getEncoder().encodeToString(privateKey.getBytes());
+
         String privateKeyBase64 = this.sanitizeKey(privateKey);
         try {
             return tokenService.generateSignedJWT(clientID, privateKeyBase64);
