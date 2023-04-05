@@ -22,8 +22,12 @@ public class HalloIDJavaSDK {
         this.tokenService = TokenService.getInstance();
     }
 
+    /**
+     * Generate service token to be sent by web client. This token will be intercepted by HalloID controller and
+     * verified using tenant's public key.
+     * @return JWT signed with tenant's private key
+     */
     public String generateServiceToken() {
-//        String privateKeyBase64 = Base64.getEncoder().encodeToString(privateKey.getBytes());
         String privateKeyBase64 = this.sanitizeKey(privateKey);
         try {
             return tokenService.generateSignedJWT(clientID, privateKeyBase64);
@@ -32,6 +36,12 @@ public class HalloIDJavaSDK {
         }
     }
 
+    /**
+     * Validates JWT returned by HalloID once the authentication process is complete. This validation is performed
+     * using HalloID public key.
+     * @param token
+     * @return AuthenticationResponse payload containing decrypted token information
+     */
     public AuthenticationResponse validateJWT(String token) {
         String publicKeyBase64 = this.sanitizeKey(halloIDPublicKey);
         try {
