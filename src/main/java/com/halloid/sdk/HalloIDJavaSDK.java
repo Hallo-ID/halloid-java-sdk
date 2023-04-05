@@ -60,4 +60,5 @@ public class HalloIDJavaSDK {
         key = key.replace("\n", "").replace("\r", "");
         return key;
     }
+
 }
