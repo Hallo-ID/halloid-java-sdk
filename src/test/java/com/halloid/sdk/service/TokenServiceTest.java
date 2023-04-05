@@ -18,10 +18,6 @@ public class TokenServiceTest {
     }
 
     @Test
-    void shouldReturnValidTokenServiceInstance() {
-    }
-
-    @Test
     void shouldReturnSignedJWT() throws NoSuchAlgorithmException, InvalidKeySpecException {
         String clientID = "TEST_CLIENT_ID";
         String privateKey = this.getEncodedPrivateKey();
